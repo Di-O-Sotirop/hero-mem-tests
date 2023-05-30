@@ -455,27 +455,27 @@ int main(int argc, char *argv[]) {
   /* Allocation */
   clock_gettime(CLOCK_REALTIME, &t_hmall_0);
   if(ARGUS == 1)
-    l3_in1      = ( int32_t*)malloc(MAX_H*MAX_W*sizeof(int32_t));
+    l3_in1      = ( long int*)malloc(MAX_H*MAX_W*sizeof(long int));
   else{
-      l3_in1      = ( int32_t*)malloc(MAX_H*MAX_W*sizeof(int32_t)/ARGUS);
-      l3_in2      = ( int32_t*)malloc(MAX_H*MAX_W*sizeof(int32_t)/ARGUS);
+      l3_in1      = ( long int*)malloc(MAX_H*MAX_W*sizeof(long int)/ARGUS);
+      l3_in2      = ( long int*)malloc(MAX_H*MAX_W*sizeof(long int)/ARGUS);
     if (ARGUS > 2)
-      l3_in3      = ( int32_t*)malloc(MAX_H*MAX_W*sizeof(int32_t)/ARGUS);
-      l3_in4      = ( int32_t*)malloc(MAX_H*MAX_W*sizeof(int32_t)/ARGUS);
+      l3_in3      = ( long int*)malloc(MAX_H*MAX_W*sizeof(long int)/ARGUS);
+      l3_in4      = ( long int*)malloc(MAX_H*MAX_W*sizeof(long int)/ARGUS);
     if (ARGUS > 3)
-      l3_in5      = ( int32_t*)malloc(MAX_H*MAX_W*sizeof(int32_t)/ARGUS);
-      l3_in6      = ( int32_t*)malloc(MAX_H*MAX_W*sizeof(int32_t)/ARGUS);
-      l3_in7      = ( int32_t*)malloc(MAX_H*MAX_W*sizeof(int32_t)/ARGUS);
-      l3_in8      = ( int32_t*)malloc(MAX_H*MAX_W*sizeof(int32_t)/ARGUS);
+      l3_in5      = ( long int*)malloc(MAX_H*MAX_W*sizeof(long int)/ARGUS);
+      l3_in6      = ( long int*)malloc(MAX_H*MAX_W*sizeof(long int)/ARGUS);
+      l3_in7      = ( long int*)malloc(MAX_H*MAX_W*sizeof(long int)/ARGUS);
+      l3_in8      = ( long int*)malloc(MAX_H*MAX_W*sizeof(long int)/ARGUS);
     if (ARGUS > 4)
-      l3_in9      = ( int32_t*)malloc(MAX_H*MAX_W*sizeof(int32_t)/ARGUS);
-      l3_in10     = ( int32_t*)malloc(MAX_H*MAX_W*sizeof(int32_t)/ARGUS);
-      l3_in11     = ( int32_t*)malloc(MAX_H*MAX_W*sizeof(int32_t)/ARGUS);
-      l3_in12     = ( int32_t*)malloc(MAX_H*MAX_W*sizeof(int32_t)/ARGUS);
-      l3_in13     = ( int32_t*)malloc(MAX_H*MAX_W*sizeof(int32_t)/ARGUS);
-      l3_in14     = ( int32_t*)malloc(MAX_H*MAX_W*sizeof(int32_t)/ARGUS);
-      l3_in15     = ( int32_t*)malloc(MAX_H*MAX_W*sizeof(int32_t)/ARGUS);
-      l3_in16     = ( int32_t*)malloc(MAX_H*MAX_W*sizeof(int32_t)/ARGUS);
+      l3_in9      = ( long int*)malloc(MAX_H*MAX_W*sizeof(long int)/ARGUS);
+      l3_in10     = ( long int*)malloc(MAX_H*MAX_W*sizeof(long int)/ARGUS);
+      l3_in11     = ( long int*)malloc(MAX_H*MAX_W*sizeof(long int)/ARGUS);
+      l3_in12     = ( long int*)malloc(MAX_H*MAX_W*sizeof(long int)/ARGUS);
+      l3_in13     = ( long int*)malloc(MAX_H*MAX_W*sizeof(long int)/ARGUS);
+      l3_in14     = ( long int*)malloc(MAX_H*MAX_W*sizeof(long int)/ARGUS);
+      l3_in15     = ( long int*)malloc(MAX_H*MAX_W*sizeof(long int)/ARGUS);
+      l3_in16     = ( long int*)malloc(MAX_H*MAX_W*sizeof(long int)/ARGUS);
   } 
   clock_gettime(CLOCK_REALTIME, &t_hmall_1);
 
