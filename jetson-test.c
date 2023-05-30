@@ -70,7 +70,7 @@
 /*---------------------------------------*/
 
 #pragma omp declare target 
-void array1_no_comp( __host uint32_t * __restrict__ x, int width, int height ) {
+void array1_no_comp(  long int * __restrict__ x, int width, int height ) {
   #pragma omp parallel
   {
     // x[0] = x[width-1];
@@ -79,7 +79,7 @@ void array1_no_comp( __host uint32_t * __restrict__ x, int width, int height ) {
 #pragma omp end declare target
 /*---------------------------------------*/
 #pragma omp declare target 
-void array2_no_comp( __host uint32_t * __restrict__ x,__host uint32_t * __restrict__ y, int width, int height) {
+void array2_no_comp(  long int * __restrict__ x, long int * __restrict__ y, int width, int height) {
   #pragma omp parallel
   {
     // x[0] = x[width-1];
@@ -89,7 +89,7 @@ void array2_no_comp( __host uint32_t * __restrict__ x,__host uint32_t * __restri
 #pragma omp end declare target
 /*---------------------------------------*/
 #pragma omp declare target 
-void array4_no_comp( __host uint32_t * __restrict__ x,__host uint32_t * __restrict__ y,__host uint32_t * __restrict__ z, __host uint32_t * __restrict__ u, int width, int height) {
+void array4_no_comp(  long int * __restrict__ x, long int * __restrict__ y, long int * __restrict__ z,  long int * __restrict__ u, int width, int height) {
   #pragma omp parallel
   {
     // x[0] = x[width-1];
@@ -98,8 +98,8 @@ void array4_no_comp( __host uint32_t * __restrict__ x,__host uint32_t * __restri
 #pragma omp end declare target
 /*---------------------------------------*/
 #pragma omp declare target 
-void array8_no_comp( __host uint32_t * __restrict__ a1,__host uint32_t * __restrict__ a2,__host uint32_t * __restrict__ a3,__host uint32_t * __restrict__ a4,\
-                  __host uint32_t * __restrict__ a5,__host uint32_t * __restrict__ a6,__host uint32_t * __restrict__ a7,__host uint32_t * __restrict__ a8,\
+void array8_no_comp(  long int * __restrict__ a1, long int * __restrict__ a2, long int * __restrict__ a3, long int * __restrict__ a4,\
+                   long int * __restrict__ a5, long int * __restrict__ a6, long int * __restrict__ a7, long int * __restrict__ a8,\
                   int width, int height) {
   #pragma omp parallel
   {
@@ -108,10 +108,10 @@ void array8_no_comp( __host uint32_t * __restrict__ a1,__host uint32_t * __restr
 #pragma omp end declare target
 /*--------------------------------------*/
 #pragma omp declare target 
-void array16_no_comp( __host uint32_t * __restrict__ a1,__host uint32_t * __restrict__ a2,__host uint32_t * __restrict__ a3,__host uint32_t * __restrict__ a4,\
-                   __host uint32_t * __restrict__ a5,__host uint32_t * __restrict__ a6,__host uint32_t * __restrict__ a7,__host uint32_t * __restrict__ a8,\
-                   __host uint32_t * __restrict__ a9,__host uint32_t * __restrict__ a10,__host uint32_t * __restrict__ a11,__host uint32_t * __restrict__ a12,\
-                   __host uint32_t * __restrict__ a13,__host uint32_t * __restrict__ a14,__host uint32_t * __restrict__ a15,__host uint32_t * __restrict__ a16,\
+void array16_no_comp(  long int * __restrict__ a1, long int * __restrict__ a2, long int * __restrict__ a3, long int * __restrict__ a4,\
+                    long int * __restrict__ a5, long int * __restrict__ a6, long int * __restrict__ a7, long int * __restrict__ a8,\
+                    long int * __restrict__ a9, long int * __restrict__ a10, long int * __restrict__ a11, long int * __restrict__ a12,\
+                    long int * __restrict__ a13, long int * __restrict__ a14, long int * __restrict__ a15, long int * __restrict__ a16,\
                   int width, int height) {
   #pragma omp parallel
   {
@@ -120,7 +120,7 @@ void array16_no_comp( __host uint32_t * __restrict__ a1,__host uint32_t * __rest
 #pragma omp end declare target
 /*========================================*/
 #pragma omp declare target 
-void array1_const_all_comp( __host uint32_t * __restrict__ x, int width, int height ) { //NOT TO BE USED 
+void array1_const_all_comp(  long int * __restrict__ x, int width, int height ) { //NOT TO BE USED 
   #pragma omp parallel
   {
     int thresh = W*H+ITERATIONS*W*H*INC_MOD;
@@ -134,7 +134,7 @@ void array1_const_all_comp( __host uint32_t * __restrict__ x, int width, int hei
 #pragma omp end declare target
 /*---------------------------------------*/
 #pragma omp declare target 
-void array1_const_few_comp( __host uint32_t * __restrict__ x, int width, int height ) { //NOT TO BE USED 
+void array1_const_few_comp(  long int * __restrict__ x, int width, int height ) { //NOT TO BE USED 
   #pragma omp parallel
   {
     int thresh = W*H+ITERATIONS*W*H*INC_MOD;
@@ -149,7 +149,7 @@ void array1_const_few_comp( __host uint32_t * __restrict__ x, int width, int hei
 /*---------------------------------------*/
 
 #pragma omp declare target 
-void array1_comp( __host uint32_t * __restrict__ x, int width, int height ) {
+void array1_comp(  long int * __restrict__ x, int width, int height ) {
   #pragma omp parallel
   {
     // for (int i=0; i<width; i++){
@@ -160,7 +160,7 @@ void array1_comp( __host uint32_t * __restrict__ x, int width, int height ) {
 #pragma omp end declare target
 /*---------------------------------------*/
 #pragma omp declare target 
-void array2_comp( __host uint32_t * __restrict__ x,__host uint32_t * __restrict__ y, int width, int height) {
+void array2_comp(  long int * __restrict__ x, long int * __restrict__ y, int width, int height) {
   #pragma omp parallel
   {
     // for (int i=0; i<width; i++){
@@ -172,7 +172,7 @@ void array2_comp( __host uint32_t * __restrict__ x,__host uint32_t * __restrict_
 #pragma omp end declare target
 /*---------------------------------------*/
 #pragma omp declare target 
-void array4_comp( __host uint32_t * __restrict__ x,__host uint32_t * __restrict__ y,__host uint32_t * __restrict__ z, __host uint32_t * __restrict__ u, int width, int height) {
+void array4_comp(  long int * __restrict__ x, long int * __restrict__ y, long int * __restrict__ z,  long int * __restrict__ u, int width, int height) {
   #pragma omp parallel
   {
   //  for (int i=0; i<width; i++){
@@ -186,8 +186,8 @@ void array4_comp( __host uint32_t * __restrict__ x,__host uint32_t * __restrict_
 #pragma omp end declare target
 /*---------------------------------------*/
 #pragma omp declare target 
-void array8_comp( __host uint32_t * __restrict__ a1,__host uint32_t * __restrict__ a2,__host uint32_t * __restrict__ a3,__host uint32_t * __restrict__ a4,\
-                  __host uint32_t * __restrict__ a5,__host uint32_t * __restrict__ a6,__host uint32_t * __restrict__ a7,__host uint32_t * __restrict__ a8,\
+void array8_comp(  long int * __restrict__ a1, long int * __restrict__ a2, long int * __restrict__ a3, long int * __restrict__ a4,\
+                   long int * __restrict__ a5, long int * __restrict__ a6, long int * __restrict__ a7, long int * __restrict__ a8,\
                   int width, int height) {
   #pragma omp parallel
   {
@@ -206,10 +206,10 @@ void array8_comp( __host uint32_t * __restrict__ a1,__host uint32_t * __restrict
 #pragma omp end declare target
 /*--------------------------------------*/
 #pragma omp declare target 
-void array16_comp( __host uint32_t * __restrict__ a1,__host uint32_t * __restrict__ a2,__host uint32_t * __restrict__ a3,__host uint32_t * __restrict__ a4,\
-                   __host uint32_t * __restrict__ a5,__host uint32_t * __restrict__ a6,__host uint32_t * __restrict__ a7,__host uint32_t * __restrict__ a8,\
-                   __host uint32_t * __restrict__ a9,__host uint32_t * __restrict__ a10,__host uint32_t * __restrict__ a11,__host uint32_t * __restrict__ a12,\
-                   __host uint32_t * __restrict__ a13,__host uint32_t * __restrict__ a14,__host uint32_t * __restrict__ a15,__host uint32_t * __restrict__ a16,\
+void array16_comp(  long int * __restrict__ a1, long int * __restrict__ a2, long int * __restrict__ a3, long int * __restrict__ a4,\
+                    long int * __restrict__ a5, long int * __restrict__ a6, long int * __restrict__ a7, long int * __restrict__ a8,\
+                    long int * __restrict__ a9, long int * __restrict__ a10, long int * __restrict__ a11, long int * __restrict__ a12,\
+                    long int * __restrict__ a13, long int * __restrict__ a14, long int * __restrict__ a15, long int * __restrict__ a16,\
                   int width, int height) {
   #pragma omp parallel
   {
@@ -237,7 +237,7 @@ void array16_comp( __host uint32_t * __restrict__ a1,__host uint32_t * __restric
 /*--------------------------------------*/
 /*---------------------------------------*/
 #pragma omp declare target 
-void array1( __host uint32_t * __restrict__ x, int width, int height ) {
+void array1(  long int * __restrict__ x, int width, int height ) {
   #pragma omp parallel
   {
     x[0] = x[width-1];
@@ -261,7 +261,7 @@ void array1( __host uint32_t * __restrict__ x, int width, int height ) {
 #pragma omp end declare target
 /*---------------------------------------*/
 #pragma omp declare target 
-void array2( __host uint32_t * __restrict__ x,__host uint32_t * __restrict__ y, int width, int height) {
+void array2(  long int * __restrict__ x, long int * __restrict__ y, int width, int height) {
   #pragma omp parallel
   {
     x[0] = y[width-1];
@@ -285,7 +285,7 @@ void array2( __host uint32_t * __restrict__ x,__host uint32_t * __restrict__ y, 
 #pragma omp end declare target
 /*--------------------------------------*/
 #pragma omp declare target 
-void array3( __host uint32_t * __restrict__ x,__host uint32_t * __restrict__ y,__host uint32_t * __restrict__ z, int width, int height) {
+void array3(  long int * __restrict__ x, long int * __restrict__ y, long int * __restrict__ z, int width, int height) {
   #pragma omp parallel
   {
     x[0] = y[width-1];
@@ -296,7 +296,7 @@ void array3( __host uint32_t * __restrict__ x,__host uint32_t * __restrict__ y,_
 #pragma omp end declare target
 /*---------------------------------------*/
 #pragma omp declare target 
-void array4( __host uint32_t * __restrict__ x,__host uint32_t * __restrict__ y,__host uint32_t * __restrict__ z, __host uint32_t * __restrict__ u, int width, int height) {
+void array4(  long int * __restrict__ x, long int * __restrict__ y, long int * __restrict__ z,  long int * __restrict__ u, int width, int height) {
   #pragma omp parallel
   {
     x[0] = y[width-1];
@@ -320,7 +320,7 @@ void array4( __host uint32_t * __restrict__ x,__host uint32_t * __restrict__ y,_
 #pragma omp end declare target
 /*---------------------------------------*/
 #pragma omp declare target 
-void array5( __host uint32_t * __restrict__ x,__host uint32_t * __restrict__ y,__host uint32_t * __restrict__ z,__host uint32_t * __restrict__ u,__host uint32_t * __restrict__ w, int width, int height) {
+void array5(  long int * __restrict__ x, long int * __restrict__ y, long int * __restrict__ z, long int * __restrict__ u, long int * __restrict__ w, int width, int height) {
   #pragma omp parallel
   {
     x[0] = y[width-1];
@@ -334,8 +334,8 @@ void array5( __host uint32_t * __restrict__ x,__host uint32_t * __restrict__ y,_
 /*---------------------------------------*/
 /*---------------------------------------*/
 #pragma omp declare target 
-void array8( __host uint32_t * __restrict__ a1,__host uint32_t * __restrict__ a2,__host uint32_t * __restrict__ a3,__host uint32_t * __restrict__ a4,\
-             __host uint32_t * __restrict__ a5,__host uint32_t * __restrict__ a6,__host uint32_t * __restrict__ a7,__host uint32_t * __restrict__ a8,\
+void array8(  long int * __restrict__ a1, long int * __restrict__ a2, long int * __restrict__ a3, long int * __restrict__ a4,\
+              long int * __restrict__ a5, long int * __restrict__ a6, long int * __restrict__ a7, long int * __restrict__ a8,\
              int width, int height) {
   #pragma omp parallel
   {
@@ -360,10 +360,10 @@ void array8( __host uint32_t * __restrict__ a1,__host uint32_t * __restrict__ a2
 #pragma omp end declare target
 /*--------------------------------------*/
 #pragma omp declare target 
-void array16( __host uint32_t * __restrict__ a1,__host uint32_t * __restrict__ a2,__host uint32_t * __restrict__ a3,__host uint32_t * __restrict__ a4,\
-                   __host uint32_t * __restrict__ a5,__host uint32_t * __restrict__ a6,__host uint32_t * __restrict__ a7,__host uint32_t * __restrict__ a8,\
-                   __host uint32_t * __restrict__ a9,__host uint32_t * __restrict__ a10,__host uint32_t * __restrict__ a11,__host uint32_t * __restrict__ a12,\
-                   __host uint32_t * __restrict__ a13,__host uint32_t * __restrict__ a14,__host uint32_t * __restrict__ a15,__host uint32_t * __restrict__ a16,\
+void array16(  long int * __restrict__ a1, long int * __restrict__ a2, long int * __restrict__ a3, long int * __restrict__ a4,\
+                    long int * __restrict__ a5, long int * __restrict__ a6, long int * __restrict__ a7, long int * __restrict__ a8,\
+                    long int * __restrict__ a9, long int * __restrict__ a10, long int * __restrict__ a11, long int * __restrict__ a12,\
+                    long int * __restrict__ a13, long int * __restrict__ a14, long int * __restrict__ a15, long int * __restrict__ a16,\
                   int width, int height) {
   #pragma omp parallel
   {
@@ -388,7 +388,7 @@ void array16( __host uint32_t * __restrict__ a1,__host uint32_t * __restrict__ a
 #pragma omp end declare target
 /*======================================================*/
 #pragma omp declare target 
-void hellowerld( __host uint32_t * __restrict__ x, int width) {
+void hellowerld(  long int * __restrict__ x, int width) {
   #pragma omp parallel
   {
     for (int i=0;i<width;i++){
@@ -413,7 +413,7 @@ void helloworld(int x, int y, int z) {
 #pragma omp end declare target
 /*---------------------------------------*/
 #pragma omp declare target 
-void offl_const_var( __host uint32_t * __restrict__ x, int width) {
+void offl_const_var(  long int * __restrict__ x, int width) {
   #pragma omp parallel
   {
     x[0] = 15;
@@ -436,46 +436,46 @@ int main(int argc, char *argv[]) {
   unsigned width          = W / div;
   unsigned height         = H;
   // printf("ARGUS: %d", div);
-  uint32_t* l3_in1;
-  uint32_t* l3_in2;
-  uint32_t* l3_in3;
-  uint32_t* l3_in4;
-  uint32_t* l3_in5;
-  uint32_t* l3_in6;
-  uint32_t* l3_in7;
-  uint32_t* l3_in8;
-  uint32_t* l3_in9;
-  uint32_t* l3_in10;
-  uint32_t* l3_in11;
-  uint32_t* l3_in12;
-  uint32_t* l3_in13;
-  uint32_t* l3_in14;
-  uint32_t* l3_in15;
-  uint32_t* l3_in16;
+  long int* l3_in1;
+  long int* l3_in2;
+  long int* l3_in3;
+  long int* l3_in4;
+  long int* l3_in5;
+  long int* l3_in6;
+  long int* l3_in7;
+  long int* l3_in8;
+  long int* l3_in9;
+  long int* l3_in10;
+  long int* l3_in11;
+  long int* l3_in12;
+  long int* l3_in13;
+  long int* l3_in14;
+  long int* l3_in15;
+  long int* l3_in16;
   /* Allocation */
   clock_gettime(CLOCK_REALTIME, &t_hmall_0);
   if(ARGUS == 1)
-    l3_in1      = (__host int32_t*)malloc(MAX_H*MAX_W*sizeof(int32_t));
+    l3_in1      = ( int32_t*)malloc(MAX_H*MAX_W*sizeof(int32_t));
   else{
-      l3_in1      = (__host int32_t*)malloc(MAX_H*MAX_W*sizeof(int32_t)/ARGUS);
-      l3_in2      = (__host int32_t*)malloc(MAX_H*MAX_W*sizeof(int32_t)/ARGUS);
+      l3_in1      = ( int32_t*)malloc(MAX_H*MAX_W*sizeof(int32_t)/ARGUS);
+      l3_in2      = ( int32_t*)malloc(MAX_H*MAX_W*sizeof(int32_t)/ARGUS);
     if (ARGUS > 2)
-      l3_in3      = (__host int32_t*)malloc(MAX_H*MAX_W*sizeof(int32_t)/ARGUS);
-      l3_in4      = (__host int32_t*)malloc(MAX_H*MAX_W*sizeof(int32_t)/ARGUS);
+      l3_in3      = ( int32_t*)malloc(MAX_H*MAX_W*sizeof(int32_t)/ARGUS);
+      l3_in4      = ( int32_t*)malloc(MAX_H*MAX_W*sizeof(int32_t)/ARGUS);
     if (ARGUS > 3)
-      l3_in5      = (__host int32_t*)malloc(MAX_H*MAX_W*sizeof(int32_t)/ARGUS);
-      l3_in6      = (__host int32_t*)malloc(MAX_H*MAX_W*sizeof(int32_t)/ARGUS);
-      l3_in7      = (__host int32_t*)malloc(MAX_H*MAX_W*sizeof(int32_t)/ARGUS);
-      l3_in8      = (__host int32_t*)malloc(MAX_H*MAX_W*sizeof(int32_t)/ARGUS);
+      l3_in5      = ( int32_t*)malloc(MAX_H*MAX_W*sizeof(int32_t)/ARGUS);
+      l3_in6      = ( int32_t*)malloc(MAX_H*MAX_W*sizeof(int32_t)/ARGUS);
+      l3_in7      = ( int32_t*)malloc(MAX_H*MAX_W*sizeof(int32_t)/ARGUS);
+      l3_in8      = ( int32_t*)malloc(MAX_H*MAX_W*sizeof(int32_t)/ARGUS);
     if (ARGUS > 4)
-      l3_in9      = (__host int32_t*)malloc(MAX_H*MAX_W*sizeof(int32_t)/ARGUS);
-      l3_in10     = (__host int32_t*)malloc(MAX_H*MAX_W*sizeof(int32_t)/ARGUS);
-      l3_in11     = (__host int32_t*)malloc(MAX_H*MAX_W*sizeof(int32_t)/ARGUS);
-      l3_in12     = (__host int32_t*)malloc(MAX_H*MAX_W*sizeof(int32_t)/ARGUS);
-      l3_in13     = (__host int32_t*)malloc(MAX_H*MAX_W*sizeof(int32_t)/ARGUS);
-      l3_in14     = (__host int32_t*)malloc(MAX_H*MAX_W*sizeof(int32_t)/ARGUS);
-      l3_in15     = (__host int32_t*)malloc(MAX_H*MAX_W*sizeof(int32_t)/ARGUS);
-      l3_in16     = (__host int32_t*)malloc(MAX_H*MAX_W*sizeof(int32_t)/ARGUS);
+      l3_in9      = ( int32_t*)malloc(MAX_H*MAX_W*sizeof(int32_t)/ARGUS);
+      l3_in10     = ( int32_t*)malloc(MAX_H*MAX_W*sizeof(int32_t)/ARGUS);
+      l3_in11     = ( int32_t*)malloc(MAX_H*MAX_W*sizeof(int32_t)/ARGUS);
+      l3_in12     = ( int32_t*)malloc(MAX_H*MAX_W*sizeof(int32_t)/ARGUS);
+      l3_in13     = ( int32_t*)malloc(MAX_H*MAX_W*sizeof(int32_t)/ARGUS);
+      l3_in14     = ( int32_t*)malloc(MAX_H*MAX_W*sizeof(int32_t)/ARGUS);
+      l3_in15     = ( int32_t*)malloc(MAX_H*MAX_W*sizeof(int32_t)/ARGUS);
+      l3_in16     = ( int32_t*)malloc(MAX_H*MAX_W*sizeof(int32_t)/ARGUS);
   } 
   clock_gettime(CLOCK_REALTIME, &t_hmall_1);
 
